@@ -68,6 +68,10 @@ struct AppBarCodeScannerView: View {
      var body: some View {
 
          ZStack {
+             Rectangle()
+                 .fill(Color.black)
+                 .opacity(0.7)
+                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
              VStack {
                  CBScanner(
                     supportBarcode: .constant([.qr, .code128]),
