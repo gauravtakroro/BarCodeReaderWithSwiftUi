@@ -50,9 +50,9 @@ struct CameraFrame: Shape {
 
 struct AppBarCodeScannerView: View {
     
-    @State var barcodeValue = ""
     @State var torchIsOn = false
     @State var cameraPosition = AVCaptureDevice.Position.back
+    @ObservedObject var viewModel: BarCodeScanViewModel
     
     private let frameWidth: CGFloat = UIScreen.main.bounds.width * 0.65
     private let scanBorderImageWidth: CGFloat = UIScreen.main.bounds.width * 0.75
@@ -76,7 +76,7 @@ struct AppBarCodeScannerView: View {
                     mockBarCode: .constant(BarcodeData(value: "My Test Data", type: .qr))
                  ) {
                      print("BarCodeType = ", $0.type.rawValue, "Value =", $0.value)
-                     barcodeValue = $0.value
+                     viewModel.updateValuesOfbarCodeValueAndShowBarCodeValueBottomView(value: $0.value)
                  }
              onDraw: {
                  print("Preview View Size = \($0.cameraPreviewView.bounds)")
@@ -120,7 +120,7 @@ struct AppBarCodeScannerView: View {
 
 struct AppBarCodeScannerView_Previews: PreviewProvider {
     static var previews: some View {
-        AppBarCodeScannerView()
+        AppBarCodeScannerView(viewModel: BarCodeScanViewModel())
     }
 }
 

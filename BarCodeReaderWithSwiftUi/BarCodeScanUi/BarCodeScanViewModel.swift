@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 import VideoToolbox
+import SwiftUI
 
 protocol BarCodeScanViewModelProtocol: ObservableObject {
      
@@ -22,6 +23,17 @@ class BarCodeScanViewModel: BarCodeScanViewModelProtocol {
     @Published var frame: CGImage?
     @Published var barCodeValue: String = ""
     @Published var showBarCodeValueBottomView: Bool = false
+    init() {
+      //  setupSubscriptions()
+    }
+}
+extension BarCodeScanViewModel {
+    func updateValuesOfbarCodeValueAndShowBarCodeValueBottomView(value: String) {
+        DispatchQueue.main.async { [self] in
+            self.barCodeValue = value
+            self.showBarCodeValueBottomView = true
+        }
+    }
 }
 
 

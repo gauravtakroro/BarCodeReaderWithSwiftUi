@@ -20,7 +20,7 @@ struct BarCodeScanView: View {
 
         ZStack(alignment: .top) {
             
-            AppBarCodeScannerView()
+            AppBarCodeScannerView(viewModel: viewModel)
 
             ZStack(alignment: .top) {
                 VStack {
@@ -44,7 +44,7 @@ struct BarCodeScanView: View {
                 if viewModel.showBarCodeValueBottomView {
                     Spacer()
                     VStack {
-                        Text("Scanned QR Code Value").foregroundColor(Color.black).padding(.top, 20)
+                        Text("Scanned Bar Code Value").foregroundColor(Color.black).padding(.top, 12)
                         HStack {
                             Spacer()
                             if UtilMethods.verifyUrl(urlString: viewModel.barCodeValue) {
@@ -68,15 +68,12 @@ struct BarCodeScanView: View {
                                 Image("x_icon").resizable().frame(width: 16, height: 16)
                             }.frame(alignment: .trailing).padding(.trailing, 24)
 
-                        }.padding(.bottom, 20).padding(.horizontal, 12).frame(width: UIScreen.main.bounds.width)
+                        }.padding(.bottom, 12).padding(.horizontal, 12).frame(width: UIScreen.main.bounds.width)
                     }.background(Color.white).frame( maxHeight: .infinity, alignment: .bottom)
                 }
             }
             .padding(.top, 30)
-        }.onAppear {
-           // viewModel.startBarCodeScanSession()
         }.onDisappear {
-           // viewModel.stopBarCodeScanSession()
             viewModel.torchOn = false
             UtilMethods.toggleTorch(torchOn: false)
         }
