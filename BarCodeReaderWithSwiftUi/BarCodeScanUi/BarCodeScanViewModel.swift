@@ -32,6 +32,7 @@ extension BarCodeScanViewModel {
         DispatchQueue.main.async { [self] in
             self.barCodeValue = value
             self.showBarCodeValueBottomView = true
+            NotificationCenter.default.post(name: .showBarCodeValue, object: nil, userInfo: [NotificationData.barCodeValue: self.barCodeValue])
         }
     }
 }

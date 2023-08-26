@@ -14,12 +14,10 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-           
             VStack {
                 NavigationLink(
                     destination: BarCodeScanView(viewModel: BarCodeScanViewModel()), isActive: $viewModel.showBarCodeScanView
                 ) {
-                    // QRCodeScanView(viewModel: QRCodeScannerViewModel())
                     EmptyView()
                 }.isDetailLink(false)
                 Spacer()
@@ -28,7 +26,7 @@ struct HomeView: View {
                 Image(systemName: "barcode.viewfinder")
                     .resizable().renderingMode(.template).frame(width: 60, height: 60, alignment: .center)
                     .foregroundColor(.black)
-                Text("BarCode Reader Demo").padding(.top, 24)
+                Text("BarCode Reader Demo").padding(.top, 24).foregroundColor(Color.black)
                 Text("please tap bottom button for BarCode scanning").padding(.top, 8).font(.system(size: 14)).foregroundColor(Color.black)
                 
                 if viewModel.scannedBarCodeValue.isEmpty {
@@ -68,6 +66,11 @@ struct HomeView: View {
                 }.padding(.horizontal, 36).padding(.bottom, 16).frame(alignment: .bottom)
             }
             .padding()
+        }.onReceive(NotificationCenter.default.publisher(for: .showBarCodeValue)) { data in
+            guard let userInfo = data.userInfo, let barCodeValue = userInfo[NotificationData.barCodeValue] else {
+                return
+            }
+            viewModel.scannedBarCodeValue = barCodeValue as! String
         }
     }
     

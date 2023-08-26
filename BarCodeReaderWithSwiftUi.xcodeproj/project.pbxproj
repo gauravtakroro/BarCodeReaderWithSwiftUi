@@ -20,6 +20,7 @@
 		93C0D4AC2A9A33D6008B17CA /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = 93C0D4AB2A9A33D6008B17CA /* CarBode */; };
 		93C0D4AE2A9A3475008B17CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4AD2A9A3475008B17CA /* HomeViewModel.swift */; };
 		93C0D4B02A9A381A008B17CA /* FlashLightScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4AF2A9A381A008B17CA /* FlashLightScanImageView.swift */; };
+		93C0D4B42A9A53C3008B17CA /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4B32A9A53C3008B17CA /* Notification+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		93C0D4A82A9A03E0008B17CA /* AppBarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarCodeScannerView.swift; sourceTree = "<group>"; };
 		93C0D4AD2A9A3475008B17CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		93C0D4AF2A9A381A008B17CA /* FlashLightScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashLightScanImageView.swift; sourceTree = "<group>"; };
+		93C0D4B32A9A53C3008B17CA /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				93C0D4A12A99FDC7008B17CA /* UtilMethods.swift */,
+				93C0D4B32A9A53C3008B17CA /* Notification+Extension.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				93C0D48C2A99D489008B17CA /* BarCodeReaderWithSwiftUiApp.swift in Sources */,
 				93C0D4B02A9A381A008B17CA /* FlashLightScanImageView.swift in Sources */,
 				93C0D4A72A9A021F008B17CA /* BarCodeScanViewModel.swift in Sources */,
+				93C0D4B42A9A53C3008B17CA /* Notification+Extension.swift in Sources */,
 				93C0D4A52A9A0140008B17CA /* BarCodeScanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

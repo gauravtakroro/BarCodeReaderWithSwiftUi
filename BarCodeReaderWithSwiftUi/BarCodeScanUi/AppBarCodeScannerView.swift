@@ -76,7 +76,9 @@ struct AppBarCodeScannerView: View {
                     mockBarCode: .constant(BarcodeData(value: "My Test Data", type: .qr))
                  ) {
                      print("BarCodeType = ", $0.type.rawValue, "Value =", $0.value)
-                     viewModel.updateValuesOfbarCodeValueAndShowBarCodeValueBottomView(value: $0.value)
+                     if $0.value != viewModel.barCodeValue {
+                         viewModel.updateValuesOfbarCodeValueAndShowBarCodeValueBottomView(value: $0.value)
+                     }
                  }
              onDraw: {
                  print("Preview View Size = \($0.cameraPreviewView.bounds)")
