@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  BarCodeReaderWithSwiftUi
 //
-//  Created by Roro Solutions LLP on 26/08/23.
+//  Created by Gaurav Tak on 26/08/23.
 //
 
 import SwiftUI
