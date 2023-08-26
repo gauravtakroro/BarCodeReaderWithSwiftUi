@@ -14,6 +14,12 @@
 		93C0D49C2A99E527008B17CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D49B2A99E527008B17CA /* HomeView.swift */; };
 		93C0D49F2A99E66C008B17CA /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C0D49E2A99E66C008B17CA /* ColorAssets.xcassets */; };
 		93C0D4A22A99FDC7008B17CA /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4A12A99FDC7008B17CA /* UtilMethods.swift */; };
+		93C0D4A52A9A0140008B17CA /* BarCodeScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4A42A9A0140008B17CA /* BarCodeScanView.swift */; };
+		93C0D4A72A9A021F008B17CA /* BarCodeScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4A62A9A021F008B17CA /* BarCodeScanViewModel.swift */; };
+		93C0D4A92A9A03E0008B17CA /* AppBarCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4A82A9A03E0008B17CA /* AppBarCodeScannerView.swift */; };
+		93C0D4AC2A9A33D6008B17CA /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = 93C0D4AB2A9A33D6008B17CA /* CarBode */; };
+		93C0D4AE2A9A3475008B17CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4AD2A9A3475008B17CA /* HomeViewModel.swift */; };
+		93C0D4B02A9A381A008B17CA /* FlashLightScanImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D4AF2A9A381A008B17CA /* FlashLightScanImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,11 @@
 		93C0D49B2A99E527008B17CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		93C0D49E2A99E66C008B17CA /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		93C0D4A12A99FDC7008B17CA /* UtilMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
+		93C0D4A42A9A0140008B17CA /* BarCodeScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScanView.swift; sourceTree = "<group>"; };
+		93C0D4A62A9A021F008B17CA /* BarCodeScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeScanViewModel.swift; sourceTree = "<group>"; };
+		93C0D4A82A9A03E0008B17CA /* AppBarCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBarCodeScannerView.swift; sourceTree = "<group>"; };
+		93C0D4AD2A9A3475008B17CA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		93C0D4AF2A9A381A008B17CA /* FlashLightScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashLightScanImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93C0D4AC2A9A33D6008B17CA /* CarBode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +69,7 @@
 		93C0D48A2A99D489008B17CA /* BarCodeReaderWithSwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				93C0D4A32A9A012B008B17CA /* BarCodeScanUi */,
 				93C0D4A02A99FDB2008B17CA /* HelperClasses */,
 				93C0D49D2A99E52C008B17CA /* HomeUi */,
 				93C0D48B2A99D489008B17CA /* BarCodeReaderWithSwiftUiApp.swift */,
@@ -80,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				93C0D49B2A99E527008B17CA /* HomeView.swift */,
+				93C0D4AD2A9A3475008B17CA /* HomeViewModel.swift */,
 			);
 			path = HomeUi;
 			sourceTree = "<group>";
@@ -90,6 +104,17 @@
 				93C0D4A12A99FDC7008B17CA /* UtilMethods.swift */,
 			);
 			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		93C0D4A32A9A012B008B17CA /* BarCodeScanUi */ = {
+			isa = PBXGroup;
+			children = (
+				93C0D4A42A9A0140008B17CA /* BarCodeScanView.swift */,
+				93C0D4A62A9A021F008B17CA /* BarCodeScanViewModel.swift */,
+				93C0D4A82A9A03E0008B17CA /* AppBarCodeScannerView.swift */,
+				93C0D4AF2A9A381A008B17CA /* FlashLightScanImageView.swift */,
+			);
+			path = BarCodeScanUi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +133,9 @@
 			dependencies = (
 			);
 			name = BarCodeReaderWithSwiftUi;
+			packageProductDependencies = (
+				93C0D4AB2A9A33D6008B17CA /* CarBode */,
+			);
 			productName = BarCodeReaderWithSwiftUi;
 			productReference = 93C0D4882A99D489008B17CA /* BarCodeReaderWithSwiftUi.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 93C0D47F2A99D489008B17CA;
+			packageReferences = (
+				93C0D4AA2A9A33D6008B17CA /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
+			);
 			productRefGroup = 93C0D4892A99D489008B17CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,9 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C0D49C2A99E527008B17CA /* HomeView.swift in Sources */,
+				93C0D4A92A9A03E0008B17CA /* AppBarCodeScannerView.swift in Sources */,
 				93C0D48E2A99D489008B17CA /* ContentView.swift in Sources */,
+				93C0D4AE2A9A3475008B17CA /* HomeViewModel.swift in Sources */,
 				93C0D4A22A99FDC7008B17CA /* UtilMethods.swift in Sources */,
 				93C0D48C2A99D489008B17CA /* BarCodeReaderWithSwiftUiApp.swift in Sources */,
+				93C0D4B02A9A381A008B17CA /* FlashLightScanImageView.swift in Sources */,
+				93C0D4A72A9A021F008B17CA /* BarCodeScanViewModel.swift in Sources */,
+				93C0D4A52A9A0140008B17CA /* BarCodeScanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,11 +334,13 @@
 				DEVELOPMENT_TEAM = 99485X5JU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "this app needs camera access to scan bar codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,11 +365,13 @@
 				DEVELOPMENT_TEAM = 99485X5JU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "this app needs camera access to scan bar codes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93C0D4AA2A9A33D6008B17CA /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93C0D4AB2A9A33D6008B17CA /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93C0D4AA2A9A33D6008B17CA /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93C0D4802A99D489008B17CA /* Project object */;
 }

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "carbode-barcode-scanner-for-swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b2c2361bb04528052ad47ee0a8276b380b4971fd"
+      }
+    }
+  ],
+  "version" : 2
+}
