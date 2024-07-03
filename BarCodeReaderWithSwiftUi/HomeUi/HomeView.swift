@@ -9,8 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct HomeView: View {
-    
     @StateObject var viewModel = HomeViewModel()
+    @State var showAllScannedQrCodeData = false
     
     var body: some View {
         NavigationView {
@@ -49,6 +49,12 @@ struct HomeView: View {
                                 Text(viewModel.scannedBarCodeValue).foregroundColor(Color.black).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true).font(.system(size: 16))
                             }
                         }
+                        
+                        Button {
+                            showAllScannedQrCodeData.toggle()
+                        } label: {
+                            Text("Show All Scanned QR Codes Data")
+                        }
                     }.padding(.top, 36)
                 }
                 Spacer()
@@ -71,7 +77,13 @@ struct HomeView: View {
                 return
             }
             viewModel.scannedBarCodeValue = barCodeValue as! String
+            viewModel.allScannedBarCodeValues.append(viewModel.scannedBarCodeValue)
         }
+        .sheet(isPresented: $showAllScannedQrCodeData, onDismiss: {
+            
+        }, content: {
+            ListOfAllScannedQrCodeValues(allScannedBarCodeValues: viewModel.allScannedBarCodeValues)
+        })
     }
     
     private func cameraPermissionAlert() -> some View {
@@ -106,5 +118,16 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct ListOfAllScannedQrCodeValues: View {
+    var allScannedBarCodeValues: [String]
+
+    var body: some View {
+        List(allScannedBarCodeValues, id: \.self) { code in
+            Text(code)
+        }
+        .navigationTitle("Scanned QR Codes")
     }
 }

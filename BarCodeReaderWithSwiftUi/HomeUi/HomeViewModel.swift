@@ -19,6 +19,7 @@ class HomeViewModel: HomeViewModelProtocol {
     @Published var showBarCodeScanView = false
     @Published var showCameraPermissionError = false
     @Published var scannedBarCodeValue: String = ""
+    @Published var allScannedBarCodeValues: [String] = []
     
     func startScanBarCode() {
         print("startScanBarCode checkCameraPermissionAndLaunchBarCode")
